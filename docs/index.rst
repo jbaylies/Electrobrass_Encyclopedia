@@ -12,11 +12,3 @@ Electrobrass is brass performance, audio engineering, music education.
    content/how-to-contribute.rst
    content/tutorials/index.rst
    content/resources/links.rst
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
