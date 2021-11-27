@@ -24,9 +24,9 @@ copyright = '2021, Electrobrass'
 author = 'Electrobrass'
 
 # The short X.Y version
-version = '0.0.1'
+version = '0.0.2'
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.0.2'
 
 
 # -- General configuration ---------------------------------------------------
@@ -110,7 +110,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'helloWorlddoc'
+htmlhelp_basename = 'ElectrobrassHTMLhelp'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -137,8 +137,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'helloWorld.tex', 'helloWorld Documentation',
-     'Michael Altfield', 'manual'),
+    (master_doc, 'Electrobrass_Encyclopedia.tex', 'Electrobrass Encyclopedia',
+     'Electrobrass', 'Encyclopedia'),
 ]
 
 
@@ -147,7 +147,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'helloworld', 'helloWorld Documentation',
+    (master_doc, 'Electrobrass', 'Electrobrass Encyclopedia',
      [author], 1)
 ]
 
@@ -158,8 +158,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'helloWorld', 'helloWorld Documentation',
-     author, 'helloWorld', 'One line description of project.',
+    (master_doc, 'Electrobrass', 'Electrobrass Encyclopedia',
+     author, 'Electrobrass', 'Brass performance, audio engineering, music education.',
      'Miscellaneous'),
 ]
 
@@ -200,7 +200,7 @@ html_context['display_lower_left'] = True
 if 'REPO_NAME' in os.environ:
 	REPO_NAME = os.environ['REPO_NAME']
 else:
-	REPO_NAME = ''
+	REPO_NAME = 'Electrobrass_Encyclopedia'
 
 # SET CURRENT_LANGUAGE
 if 'current_language' in os.environ:
@@ -251,7 +251,7 @@ for version in versions:
 rinoh_documents = [(
  master_doc,
  'target',
- project+ ' Documentation',
+ project+ ' PDF',
  '© ' +copyright,
 )]
 today_fmt = "%B %d, %Y"
@@ -269,6 +269,6 @@ html_context['downloads'].append( ('epub', '/' +REPO_NAME+ '/' +current_language
 ##########################
 
 html_context['display_github'] = True
-html_context['github_user'] = 'maltfield'
-html_context['github_repo'] = 'rtd-github-pages'
+html_context['github_user'] = 'jbaylies'
+html_context['github_repo'] = 'Electrobrass_Encyclopedia'
 html_context['github_version'] = 'master/docs/'
