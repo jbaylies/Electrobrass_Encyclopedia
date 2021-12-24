@@ -7,7 +7,7 @@ Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/we
 
 `Click here <https://www.youtube.com/watch?v=K3kPgxQ373U>`_ for a compilation of short clips I recorded while I was making the bell.
 
-If you haven’t soldered before, `Nic Collins’ book Handmade Electronic Music <https://www.nicolascollins.com/handmade.htm>`_ is a great way to learn how.
+If you haven’t soldered before, Nic Collins’ book `Handmade Electronic Music <https://www.nicolascollins.com/handmade.htm>`_ is a great way to learn how.
 
 Adafruit has a `soldering guide <https://learn.adafruit.com/make-it-glow-how-to-solder-neopixels-a-beginners-guide>`_ specifically for LEDs.
 
@@ -19,51 +19,51 @@ Also, check out `Jay Converse’s LED bell <https://www.facebook.com/TubaGuyFair
 Materials
 ---------
 
-- One dedicated sousaphone bell (this is a permanent installation)
+* One dedicated sousaphone bell (this is a permanent installation)
 
   I used a fiberglass bell spray-painted black. the LEDs will stick to a lacquered bell just as well, but keep in mind that the LEDs will be soldered while they’re on the bell, which would not do the lacquer any favors.
 
-- `Condenser clip-on mic <https://www.audio-technica.com/cms/wired_mics/8b8850105bdc46d6/index.html>`_
+* `Condenser clip-on mic <https://www.audio-technica.com/cms/wired_mics/8b8850105bdc46d6/index.html>`_
 
   My max patch currently only uses amplitude data from the mic. It’s definitely possible to use a much cheaper mic, or even `solder your own. <https://learn.adafruit.com/adafruit-agc-electret-microphone-amplifier-max9814>`_
 
-- `Audio interface <https://www.reddit.com/r/audioengineering/wiki/faq#wiki_how_do_i_record_with_my_computer.3F__what.27s_an_interface.3F>`_
+* `Audio interface <https://www.reddit.com/r/audioengineering/wiki/faq#wiki_how_do_i_record_with_my_computer.3F__what.27s_an_interface.3F>`_
 
-- `Max/MSP <https://cycling74.com/>`_
+* `Max/MSP <https://cycling74.com/>`_
 
-- `Teensy 3.2 <https://www.pjrc.com/store/teensy32.html>`_
+* `Teensy 3.2 <https://www.pjrc.com/store/teensy32.html>`_
 
-- `OctoWS2811 <https://www.pjrc.com/store/octo28_adaptor.html>`_
+* `OctoWS2811 <https://www.pjrc.com/store/octo28_adaptor.html>`_
 
-- `Header pins <https://www.pjrc.com/store/header_14x1.html>`_
+* `Header pins <https://www.pjrc.com/store/header_14x1.html>`_
 
-- `Sockets <https://www.pjrc.com/store/socket_14x1.html>`_
+* `Sockets <https://www.pjrc.com/store/socket_14x1.html>`_
 
-- `WS2812b RGB LED <https://www.amazon.com/Programmable-Aclorol-Individually-Addressable-Raspberry/dp/B07BKNS7DJ>`_ (200 LEDs needed for this tutorial, but definitely buy extras. Even the pros sometimes have trouble sourcing good ones that won’t burn out quickly) WS2812 LEDs were released to the world 7 years ago, and they’ve been improved upon since then. `Click here <https://hackaday.com/2019/03/26/can-you-live-without-the-ws2812/>`_ to read more about other types of LEDs.
+* `WS2812b RGB LED <https://www.amazon.com/Programmable-Aclorol-Individually-Addressable-Raspberry/dp/B07BKNS7DJ>`_ (200 LEDs needed for this tutorial, but definitely buy extras. Even the pros sometimes have trouble sourcing good ones that won’t burn out quickly) WS2812 LEDs were released to the world 7 years ago, and they’ve been improved upon since then. `Click here <https://hackaday.com/2019/03/26/can-you-live-without-the-ws2812/>`_ to read more about other types of LEDs.
 
-- `5V 50W PSU <https://www.aliexpress.com/item/4000221993487.html>`_
+* `5V 50W PSU <https://www.aliexpress.com/item/4000221993487.html>`_
 
-- `Soldering Iron <https://www.testequipmentdepot.com/weller/soldering/soldering-stations/digital-we-soldering-station-120v-70w-we1010.htm>`_ (I bought a cheap soldering iron, hated it, then splurged on the Weller, which is great)
+* `Soldering Iron <https://www.testequipmentdepot.com/weller/soldering/soldering-stations/digital-we-soldering-station-120v-70w-we1010.htm>`_ (I bought a cheap soldering iron, hated it, then splurged on the Weller, which is great)
 
-- `Helping hands <https://www.amazon.com/Neiko-01902-Adjustable-Magnifying-Alligator/dp/B000P42O3C>`_
+* `Helping hands <https://www.amazon.com/Neiko-01902-Adjustable-Magnifying-Alligator/dp/B000P42O3C>`_
 
-- `lead solder <https://www.amazon.com/WYCTIN-Diameter-Electrical-Soldering-Purpose/dp/B071WQ9X5K>`_ (leadless solder is a PITA)
+* `lead solder <https://www.amazon.com/WYCTIN-Diameter-Electrical-Soldering-Purpose/dp/B071WQ9X5K>`_ (leadless solder is a PITA)
 
-- Electrical tape and Gorilla tape
+* Electrical tape and Gorilla tape
 
-- `Micro USB cable <https://www.digikey.com/short/zb93pw>`_
+* `Micro USB cable <https://www.digikey.com/short/zb93pw>`_
 
-- `USB extension cable <https://www.digikey.com/short/zb93z3>`_
+* `USB extension cable <https://www.digikey.com/short/zb93z3>`_
 
-- `Barrel extension cable <https://www.digikey.com/short/zb934t>`_
+* `Barrel extension cable <https://www.digikey.com/short/zb934t>`_
 
-- `XLR cable <https://www.monoprice.com/product?p_id=4754>`_
+* `XLR cable <https://www.monoprice.com/product?p_id=4754>`_
 
-- `CAT6 cable <https://www.monoprice.com/product?p_id=9789>`_
+* `CAT6 cable <https://www.monoprice.com/product?p_id=9789>`_
 
-- `Stranded wire 22 AWG <https://www.pololu.com/product/2640>`_
+* `Stranded wire 22 AWG <https://www.pololu.com/product/2640>`_
 
-- Projector and tripod (the tripod matters more than the projector. It must remain completely stationary for however long it takes you to place all of the LEDs on the bell)
+* Projector and tripod (the tripod matters more than the projector. It must remain completely stationary for however long it takes you to place all of the LEDs on the bell)
 
 
 Initial Setup
@@ -71,9 +71,9 @@ Initial Setup
 
 `Click here <https://www.pjrc.com/store/octo28_adaptor.html>`_ for instructions on how to connect the OctoWS2811, Teensy 3.2, power supply, and LEDs. This is to make sure everything works before it’s installed on the bell.
 
-Download this folder o’ files https://drive.google.com/drive/folders/1zNywJd1qFBDvmCKHP6uyBZwvYQ1FHMPt?usp=sharing
+Download `this folder o’ files. <https://drive.google.com/drive/folders/1zNywJd1qFBDvmCKHP6uyBZwvYQ1FHMPt?usp=sharing>`_ If the Google Drive link ever goes down then the files are also available `in this repository. <https://github.com/jbaylies/Electrobrass_Encyclopedia/tree/master/docs/content/tutorials/data>`_
 
-Upload success.ino to the teensy by following the instructions here: https://www.pjrc.com/teensy/teensyduino.html
+Upload success.ino to the teensy by following `these instructions. <https://www.pjrc.com/teensy/teensyduino.html>`_
 
 This part of the code is the most important, and may need to be changed.
 
@@ -82,13 +82,13 @@ This part of the code is the most important, and may need to be changed.
   const int ledsPerStrip = 26;
   const int numStrips = 8;
 
-- Open testpatch1.maxpat
+* Open testpatch1.maxpat
 
-- Turn the patch’s audio on.
+* Turn the patch’s audio on.
 
-- Clear the serial ports and locate the teensy.
+* Clear the serial ports and locate the teensy.
 
-- Enable jit.world, and the LEDs should light up...
+* Enable jit.world, and the LEDs should light up...
 
 
 Getting the Coordinates
@@ -100,13 +100,13 @@ I found `this website, <http://iwant2study.org/lookangejss/math/Series_Numbers/e
 
 then,
 
-.. figure:: max-scale-coords.png
+.. figure:: media/max-scale-coords.png
    :scale: 90%
    :alt: max-scale-coords.png
 
    This patch will get the Fib. Spiral showing up properly in jit.world
 
-.. figure:: flipped-on-xaxis.png
+.. figure:: media/flipped-on-xaxis.png
    :scale: 90%
    :alt: flipped-on-xaxis.png
 
@@ -122,7 +122,7 @@ One problem I faced is that I placed half the LEDs, then took a break for a few 
 
 You'll want to wire the 200 LEDs in eight groups of 25. You should use your own discretion to do this as efficiently as possible. You can use my wiring diagram below as a guideline, but be warned that it’s flipped on its X axis, and I had to account for one extra LED. Fibonacci index #29 corresponds to wiring index #35 and #170.
 
-.. figure:: numbered-indices.jpeg
+.. figure:: media/numbered-indices.jpeg
    :scale: 90%
    :alt: numbered-indices.jpeg
 
@@ -132,7 +132,7 @@ The top numbers are the Fibonacci indices, which can be obtained from `here <htt
 
 Then I typed all of those indices into a coll object, which allowed me to reorder the coordinates properly using the patch pictured below.
 
-.. figure:: coll-reorder.png
+.. figure:: media/coll-reorder.png
    :scale: 90%
    :alt: coll-reorder.png
 
