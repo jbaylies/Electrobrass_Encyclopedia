@@ -38,6 +38,14 @@ reddit
 - `r/bass Weekly Lesson 6: Equalization <https://www.reddit.com/r/Bass/comments/3rk88o/weekly_lesson_6_equalization/cwpfp5l/?utm_source=reddit&utm_medium=web2x&context=3>`_
 
 
+bandcamp
+--------
+
+- `The Tuba-Driven Doom Metal of Dan Peck <https://daily.bandcamp.com/features/the-tuba-driven-doom-metal-of-dan-peck>`_
+
+- `Theon Cross Connects Jazz With Jamaican Sound System Culture <https://daily.bandcamp.com/features/theon-cross-intra-i-interview>`_
+
+
 genres
 ------
 
