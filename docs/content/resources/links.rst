@@ -39,6 +39,8 @@ articles
 
 - `Theon Cross Connects Jazz With Jamaican Sound System Culture <https://daily.bandcamp.com/features/theon-cross-intra-i-interview>`_
 
+- `Unofficial Windows 10 Audio Workstation build and tweak guide <https://aka.ms/Win10AudioTweakGuide>`_
+
 
 reddit
 ------
