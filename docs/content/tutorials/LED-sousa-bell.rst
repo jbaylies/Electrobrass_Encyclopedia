@@ -3,18 +3,13 @@ LED Sousaphone Bell
 
 by John Baylies - `sousastep.quest <https://www.sousastep.quest/>`_
 
-Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/web/academics/centers/ccm/education/sonicarts.php>`_ program and the `Performance And Interactive Media Arts <https://www.pima-brooklyncollege.info/>`_ program.
+Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/web/academics/centers/ccm/education/sonicarts.php>`_ program and the `Performance And Interactive Media Arts <https://www.brooklyn.cuny.edu/web/academics/schools/mediaarts/interdisciplinary/graduate/pima/about.php>`_ program.
 
-`Click here <https://www.youtube.com/watch?v=K3kPgxQ373U>`_ for a compilation of short clips I recorded while making the bell.
+.. raw:: html
 
-If you haven’t soldered before, Nic Collins’ book `Handmade Electronic Music <https://www.nicolascollins.com/handmade.htm>`_ is a great way to learn.
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/K3kPgxQ373U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Adafruit has a `soldering guide <https://learn.adafruit.com/make-it-glow-how-to-solder-neopixels-a-beginners-guide>`_ specifically for LEDs.
-
-If you are unfamiliar with Max/MSP, `check out the tutorials. <https://docs.cycling74.com/max8>`_
-
-Also, check out `Jay Converse’s LED bell <https://www.facebook.com/TubaGuyFairfax>`_ because it’s cool too!
-
+Check out `Jay Converse’s LED bell <https://www.facebook.com/TubaGuyFairfax>`_ too!
 
 Materials
 ---------
@@ -23,7 +18,7 @@ Materials
 * `Condenser clip-on mic. <https://www.audio-technica.com/cms/wired_mics/8b8850105bdc46d6/index.html>`_ My max patch currently only uses amplitude data from the mic. It’s definitely possible to use a much cheaper mic, or even `solder your own. <https://learn.adafruit.com/adafruit-agc-electret-microphone-amplifier-max9814>`_
 * `Audio interface <https://www.reddit.com/r/audioengineering/wiki/faq#wiki_how_do_i_record_with_my_computer.3F__what.27s_an_interface.3F>`_
 * `Max/MSP <https://cycling74.com/>`_
-* `Teensy 3.2 <https://www.pjrc.com/store/teensy32.html>`_
+* `Teensy 3.2 <https://www.pjrc.com/store/teensy32.html>`_ A Teensy 4 will work as well.
 * `OctoWS2811 <https://www.pjrc.com/store/octo28_adaptor.html>`_
 * `Header pins <https://www.pjrc.com/store/header_14x1.html>`_
 * `Sockets <https://www.pjrc.com/store/socket_14x1.html>`_
@@ -32,6 +27,9 @@ Materials
 * `Soldering Iron <https://www.testequipmentdepot.com/weller/soldering/soldering-stations/digital-we-soldering-station-120v-70w-we1010.htm>`_ (I bought a cheap soldering iron, hated it, then splurged on the Weller, which is great)
 * `Helping hands <https://www.amazon.com/Neiko-01902-Adjustable-Magnifying-Alligator/dp/B000P42O3C>`_
 * `lead solder <https://www.amazon.com/WYCTIN-Diameter-Electrical-Soldering-Purpose/dp/B071WQ9X5K>`_ (leadless solder is a PITA)
+
+If you haven’t soldered before, Nic Collins’ book `Handmade Electronic Music <https://www.nicolascollins.com/handmade.htm>`_ is a great way to learn. Also, Adafruit has a `soldering guide <https://learn.adafruit.com/make-it-glow-how-to-solder-neopixels-a-beginners-guide>`_ specifically for LEDs.
+
 * Electrical tape and Gorilla tape
 * `Micro USB cable <https://www.digikey.com/short/zb93pw>`_
 * `USB extension cable <https://www.digikey.com/short/zb93z3>`_
@@ -44,19 +42,21 @@ Materials
 Overview
 --------
 
-Max/MSP handles the VFX, and outputs a stream of RGB data to the Teensy, which uses the venerable OctoWS2811 to send RGB data to the ws2812b LEDs. Max must ensure that the RGB data is sent to the Teensy in the order in which the LEDs are wired to the OctoWS2811. To do this, we append and prepend start and end markers to each frame of RGB data.
+Max/MSP handles the VFX, and outputs a stream of RGB data to the Teensy, which uses the venerable OctoWS2811 to send RGB data to the ws2812b LEDs. Max must ensure that the RGB data is sent to the Teensy in the order in which the LEDs are wired to the OctoWS2811. Sometimes this stream of RGB data can become offset. To fix this we add start and end markers to each frame of RGB data .
 
 .. figure:: media/startandendmarkers.png
    :width: 90%
    :alt: startandendmarkers.png
+
 
 Since Max can only send the numbers 0 - 255 to the Teensy, we clamp 0 - 253 so that 254 and 255 can be used as markers. There's not much of a difference in brightness at that end of the range, anyways.
 
 The current Teensy code can be `downloaded from here <https://github.com/jbaylies/sousastep/blob/main/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino>`_. This code also sends capacitive touch sense data from the Teensy 3.2 to Max, which can be used to control a noise gate so that it closes whenever you're not touching the mouthpiece. This helps prevent feedback in a live performance with lots of bass and/or reverb. You'll have to make some modifications to the code if you want to use this with a Teensy 4.0
 
 .. figure:: media/touchsensereceive.png
-   :width: 90%
+   :width: 60%
    :alt: touchsensereceive.png
+
 
 I also tried receiving data from an accelerometer, but using it to control the VFX looked cheesy, and it made the frames stutter.
 
