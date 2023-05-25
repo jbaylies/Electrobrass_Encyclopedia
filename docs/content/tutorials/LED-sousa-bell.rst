@@ -1,19 +1,19 @@
 LED Sousaphone Bell
 ===================
 
-by John Baylies - `sousastep.com <https://www.sousastep.com/>`_
+by John Baylies - `sousastep.quest <https://www.sousastep.quest/>`_
 
 Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/web/academics/centers/ccm/education/sonicarts.php>`_ program and the `Performance And Interactive Media Arts <https://www.pima-brooklyncollege.info/>`_ program.
 
-`Click here <https://www.youtube.com/watch?v=K3kPgxQ373U>`_ for a compilation of short clips I recorded while I was making the bell.
+`Click here <https://www.youtube.com/watch?v=K3kPgxQ373U>`_ for a compilation of short clips I recorded while making the bell.
 
-If you haven’t soldered before, Nic Collins’ book `Handmade Electronic Music <https://www.nicolascollins.com/handmade.htm>`_ is a great way to learn how.
+If you haven’t soldered before, Nic Collins’ book `Handmade Electronic Music <https://www.nicolascollins.com/handmade.htm>`_ is a great way to learn.
 
 Adafruit has a `soldering guide <https://learn.adafruit.com/make-it-glow-how-to-solder-neopixels-a-beginners-guide>`_ specifically for LEDs.
 
 If you are unfamiliar with Max/MSP, `check out the tutorials. <https://docs.cycling74.com/max8>`_
 
-Also, check out `Jay Converse’s LED bell <https://www.facebook.com/TubaGuyFairfax>`_ because it’s cool too.
+Also, check out `Jay Converse’s LED bell <https://www.facebook.com/TubaGuyFairfax>`_ because it’s cool too!
 
 
 Materials
@@ -41,31 +41,56 @@ Materials
 * `Stranded wire 22 AWG <https://www.pololu.com/product/2640>`_
 * Projector and tripod (the tripod matters more than the projector. It must remain completely stationary for however long it takes you to place all of the LEDs on the bell)
 
+Overview
+--------
+
+Max/MSP handles the VFX, and outputs a stream of RGB data to the Teensy, which uses the venerable OctoWS2811 to send RGB data to the ws2812b LEDs. Max must ensure that the RGB data is sent to the Teensy in the order in which the LEDs are wired to the OctoWS2811. To do this, we append and prepend start and end markers to each frame of RGB data.
+
+.. figure:: media/startandendmarkers.png
+   :width: 90%
+   :alt: startandendmarkers.png
+
+Since Max can only send the numbers 0 - 255 to the Teensy, we clamp 0 - 253 so that 254 and 255 can be used as markers. There's not much of a difference in brightness at that end of the range, anyways.
+
+The current Teensy code can be `downloaded from here <https://github.com/jbaylies/sousastep/blob/main/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino>`_. This code also sends capacitive touch sense data from the Teensy 3.2 to Max, which can be used to control a noise gate so that it closes whenever you're not touching the mouthpiece. This helps prevent feedback in a live performance with lots of bass and/or reverb. You'll have to make some modifications to the code if you want to use this with a Teensy 4.0
+
+.. figure:: media/touchsensereceive.png
+   :width: 90%
+   :alt: touchsensereceive.png
+
+I also tried receiving data from an accelerometer, but using it to control the VFX looked cheesy, and it made the frames stutter.
+
+You can download my `VFX Max project here <https://github.com/jbaylies/sousastep/tree/main/Sousastep%20Visual%20FX>`_ (with the start and end markers). It's set up to work with my rig, so you'll have to modify it a bit, but maybe I could refactor it to work well with git branches...
+
 
 Initial Setup
 -------------
 
-`Click here <https://www.pjrc.com/store/octo28_adaptor.html>`_ for instructions on how to connect the OctoWS2811, Teensy 3.2, power supply, and LEDs. This is to make sure everything works before it’s installed on the bell.
+Start with the simplest possible setup to ensure that Max can control the LEDs before they're attached to the bell. 
 
-Download `this folder o’ files. <https://drive.google.com/drive/folders/1zNywJd1qFBDvmCKHP6uyBZwvYQ1FHMPt?usp=sharing>`_ If the Google Drive link ever goes down then the files are also available `in this repository. <https://github.com/jbaylies/Electrobrass_Encyclopedia/tree/master/docs/content/tutorials/data>`_
+`Click here <https://www.pjrc.com/store/octo28_adaptor.html>`_ for instructions on how to connect the OctoWS2811, Teensy 3.2, power supply, and LEDs.
+
+Download `this folder o’ files. <https://github.com/jbaylies/Electrobrass_Encyclopedia/tree/master/docs/content/tutorials/data>`_ (without start and end markers)
 
 Upload success.ino to the teensy by following `these instructions. <https://www.pjrc.com/teensy/teensyduino.html>`_
-
-This part of the code is the most important, and may need to be changed.
-
-.. code:: cpp
-
-  const int ledsPerStrip = 26;
-  const int numStrips = 8;
 
 * Open testpatch1.maxpat
 * Turn the patch’s audio on.
 * Clear the serial ports and locate the teensy.
 * Enable jit.world, and the LEDs should light up...
 
+If only some of the LEDs light up, change this portion of the code:
+
+.. code:: cpp
+
+  const int ledsPerStrip = 26;
+  const int numStrips = 8;
+
 
 Getting the Coordinates
 -----------------------
+
+We can get a list of RGB data from Max by sending pixel coordinates to a matrix. You can arrange the LEDs in any pattern you'd like as long as there's an ordered list of coordinates, which will have to be reordered after the LED wiring order is determined.
 
 Here’s how I got the coordinates for ``remappedLEDcoordinates.txt``
 
@@ -89,26 +114,24 @@ then,
 Arranging the LEDs
 ------------------
 
-Take a screenshot of the spiral in jit.world (or use the one provided above), and use a projector to project it onto your sousaphone bell. This will be where you place your LEDs. I found that it is easier to place the LEDs while the projector is on than it is to mark the spots with a marker and then put the LEDs on top of the marked spots. Once completed, the bell will look best from the point of view of where the projector was while you were placing the LEDs
+Project a screenshot of the spiral in jit.world onto the bell. Place the LEDs onto the projected dots while being mindful of the wiring order. You'll want to wire the 200 LEDs in eight groups of 25. You should use your own discretion to do this as efficiently as possible. 
 
 One problem I faced is that I placed half the LEDs, then took a break for a few days, and when I tried to set up the projector again I learned that realigning the projector perfectly is impossible. This led to one speck of light hitting the flare of the bell the first time, and the throat of the bell the second time, which made me place one extra LED, which led to much confusion later on.
 
-You'll want to wire the 200 LEDs in eight groups of 25. You should use your own discretion to do this as efficiently as possible. You can use my wiring diagram below as a guideline, but be warned that it’s flipped on its X axis, and I had to account for one extra LED. Fibonacci index #29 corresponds to wiring index #35 and #170.
+Once completed, the bell will look best from the projector's point of view.
 
 .. figure:: media/numbered-indices.jpeg
    :width: 90%
    :alt: numbered-indices.jpeg
 
-   I used this diagram to reorder the coordinates from the Fibonacci spiral order to my wiring order.
+   I used this diagram to reorder the coordinates from the Fibonacci spiral order to my wiring order. You can use it as a guideline, but be warned that it’s flipped on its X axis, and I had to account for one extra LED. Fibonacci index #29 corresponds to wiring index #35 and #170.
 
-The top numbers are the Fibonacci indices, which can be obtained from `here <http://iwant2study.org/lookangejss/math/Series_Numbers/ejss_model_FibonacciSpiral/>`_ by clicking ``number``. The bottom numbers are the wiring indices. I did not plan out the wiring indices in advance. I simply turned on the first LED in each of the eight chains and wrote down the wiring indices on the above chart.
+The top numbers are the Fibonacci indices, from `iwant2study.org <http://iwant2study.org/lookangejss/math/Series_Numbers/ejss_model_FibonacciSpiral/>`_. The bottom numbers are the wiring indices, which can be determined by turning on the first LED in each of the eight strips.
 
-Then I typed all of those indices into a coll object, which allowed me to reorder the coordinates properly using the patch pictured below.
+Typing those indices into a coll object allows the coordinates to be reordered using the patch below.
 
 .. figure:: media/coll-reorder.png
    :scale: 90%
    :alt: coll-reorder.png
 
    This essentially makes the whole thing a big, low-resolution TV screen.
-
-...and that’s all the info you need to do this yourself. Best of luck!
