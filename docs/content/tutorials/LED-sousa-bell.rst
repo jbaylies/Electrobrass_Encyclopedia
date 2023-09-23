@@ -51,7 +51,7 @@ Max/MSP handles the VFX, and outputs a stream of RGB data to the Teensy, which u
 
 Since Max can only send the numbers 0 - 255 to the Teensy, we clamp 0 - 253 so that 254 and 255 can be used as markers. There's not much of a difference in brightness at that end of the range, anyways.
 
-The current Teensy code can be `downloaded from here <https://github.com/jbaylies/sousastep/blob/main/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino>`_. This code also sends capacitive touch sense data from the Teensy 3.2 to Max, which can be used to control a noise gate so that it closes whenever you're not touching the mouthpiece. This helps prevent feedback in a live performance with lots of bass and/or reverb. You'll have to make some modifications to the code if you want to use this with a Teensy 4.0
+The current Teensy code can be `downloaded from here <https://github.com/Sousastep/sousastep/blob/main/microcontrollers/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino>`_. This code also sends capacitive touch sense data from the Teensy 3.2 to Max, which can be used to control a noise gate so that it closes whenever you're not touching the mouthpiece. This helps prevent feedback in a live performance with lots of bass and/or reverb. You'll have to make some modifications to the code if you want to use this with a Teensy 4.0
 
 .. figure:: media/touchsensereceive.png
    :width: 60%
