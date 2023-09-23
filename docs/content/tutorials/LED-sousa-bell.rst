@@ -7,7 +7,7 @@ Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/we
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/K3kPgxQ373U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/K3kPgxQ373U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Check out `Jay Converse’s LED bell <https://wjla.com/news/local/gallery/web-exclusive-tuba-man?photo=1>`_ too!
 
