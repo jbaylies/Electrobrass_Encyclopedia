@@ -1,11 +1,72 @@
 Assorted Resources
 ==================
 
-- `free and/or open source software <https://whyreaper.com/plugins-resources/>`_
+Communities
+-----------
+
+- [![Discord](https://img.shields.io/discord/1044699978993504368?label=Sousastep&logo=discord&logoColor=5865F2&style=flat-square&color=5865F2)](https://discord.gg/feBwTZt84d)
+
+- `electrobrass subreddit <https://www.reddit.com/r/electrobrass/>`_
 
 - `Horn FX: wind instruments + guitar pedals <http://www.horn-fx.com/>`_
 
+- `International Conference on Digital Audio Effects (DAFx) <https://dafx.de/>`_
+
+- `Audio Engineering Society <https://aes2.org/>`_
+
+Free Plugins
+------------
+
+- `kilohearts essentials <https://kilohearts.com/products/kilohearts_essentials>`_
+
+- `MFreeFxBundle <https://www.meldaproduction.com/MFreeFxBundle>`_
+
+- `whyreaper.com/plugins-resources <https://whyreaper.com/plugins-resources/>`_
+
+Networked Jamming
+~~~~~~~~~~~~~~~~~
+
+- Ninjam / Jamtaba
+
+  - Website https://jamtaba-music-web-site.appspot.com/
+
+  - Download https://github.com/elieserdejesus/JamTaba/releases
+
+  - Docs https://github.com/elieserdejesus/JamTaba/wiki/Jamtaba%27s-user-guide
+
+
+- Sonobus
+
+  - Website https://sonobus.net/#download
+
+  - Download https://sonobus.net/
+
+  - Docs https://sonobus.net/sonobus_userguide.html
+
+
+Free Samples
+------------
+
+- `free 1gb of black octopus samples <https://blackoctopus-sound.com/product/free-1gb-of-black-octopus-samples/>`_
+
+Textbooks
+---------
+
 - `Handmade Electronic Music: The Art of Hardware Hacking <https://www.nicolascollins.com/handmade.htm>`_
+
+Audio Effect FAQs
+-----------------
+
+- `Compressor, preamp FAQ<http://www.ovnilab.com/faq.shtml>`_
+
+- `r/audioengineering FAQ <https://www.reddit.com/r/audioengineering/wiki/faq>`_
+
+General Info
+~~~~~~~~~~~~
+
+- `r/bass Weekly Lesson 7: Pedal Chains <https://www.reddit.com/r/Bass/comments/3sh4lt/weekly_lesson_7_pedal_chains/cwx9sv1/?utm_source=reddit&utm_medium=web2x&context=3>`_
+
+- `r/bass Weekly Lesson 6: Equalization <https://www.reddit.com/r/Bass/comments/3rk88o/weekly_lesson_6_equalization/cwpfp5l/?utm_source=reddit&utm_medium=web2x&context=3>`_
 
 
 microphones
@@ -29,6 +90,10 @@ videos
 
 - `Steve Duda: Teaching Yourself to Make Music Software <https://www.youtube.com/watch?v=Cp0rtLaXBio>`_
 
+- `Adam Neely: How In-Ear Monitors are Making Better Musicians <https://www.youtube.com/watch?v=mHoljbkyAEs>`_
+
+- `David Gibson: The Art Of Mixing <https://www.youtube.com/watch?v=TEjOdqZFvhY>`_
+
 
 articles
 --------
@@ -40,18 +105,6 @@ articles
 - `Theon Cross Connects Jazz With Jamaican Sound System Culture <https://daily.bandcamp.com/features/theon-cross-intra-i-interview>`_
 
 - `Unofficial Windows 10 Audio Workstation build and tweak guide <https://aka.ms/Win10AudioTweakGuide>`_
-
-
-reddit
-------
-
-- `r/electrobrass <https://www.reddit.com/r/electrobrass/>`_
-
-- `r/bass Weekly Lesson 7: Pedal Chains <https://www.reddit.com/r/Bass/comments/3sh4lt/weekly_lesson_7_pedal_chains/cwx9sv1/?utm_source=reddit&utm_medium=web2x&context=3>`_
-
-- `r/bass Weekly Lesson 6: Equalization <https://www.reddit.com/r/Bass/comments/3rk88o/weekly_lesson_6_equalization/cwpfp5l/?utm_source=reddit&utm_medium=web2x&context=3>`_
-
-- `r/audioengineering FAQ <https://www.reddit.com/r/audioengineering/wiki/faq>`_
 
 
 genres
