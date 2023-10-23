@@ -4,10 +4,7 @@ Assorted Resources
 Communities
 -----------
 
-- [![Discord](https://img.shields.io/discord/1044699978993504368?label=Sousastep&logo=discord&logoColor=5865F2&style=flat-square&color=5865F2)](https://discord.gg/feBwTZt84d)
-
-<a href="https://discord.gg/feBwTZt84d"><img alt="Discord" src="https://img.shields.io/discord/1044699978993504368?label=Sousastep&logo=discord&logoColor=5865F2&style=flat-square&color=5865F2"></a>
-
+- `sousastep Discord <https://discord.gg/feBwTZt84d>`_
 
 - `electrobrass subreddit <https://www.reddit.com/r/electrobrass/>`_
 
