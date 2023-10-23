@@ -6,6 +6,9 @@ Communities
 
 - [![Discord](https://img.shields.io/discord/1044699978993504368?label=Sousastep&logo=discord&logoColor=5865F2&style=flat-square&color=5865F2)](https://discord.gg/feBwTZt84d)
 
+<a href="https://discord.gg/feBwTZt84d"><img alt="Discord" src="https://img.shields.io/discord/1044699978993504368?label=Sousastep&logo=discord&logoColor=5865F2&style=flat-square&color=5865F2"></a>
+
+
 - `electrobrass subreddit <https://www.reddit.com/r/electrobrass/>`_
 
 - `Horn FX: wind instruments + guitar pedals <http://www.horn-fx.com/>`_
@@ -57,7 +60,7 @@ Textbooks
 Audio Effect FAQs
 -----------------
 
-- `Compressor, preamp FAQ<http://www.ovnilab.com/faq.shtml>`_
+- `Compressor, preamp FAQ <http://www.ovnilab.com/faq.shtml>`_
 
 - `r/audioengineering FAQ <https://www.reddit.com/r/audioengineering/wiki/faq>`_
 
