@@ -2,5 +2,5 @@ MIDI Preferences
 ================
 
 .. figure:: media/midi.png
-   :width: 60%
+   :width: 95%
    :alt: midi

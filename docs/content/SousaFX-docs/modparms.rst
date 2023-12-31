@@ -2,5 +2,5 @@ Modulation Parameters
 =====================
 
 .. figure:: media/LPFmod.png
-   :width: 60%
+   :width: 95%
    :alt: mod parms

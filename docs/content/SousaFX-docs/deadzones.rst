@@ -2,7 +2,7 @@ Deadzones
 =========
 
 .. figure:: media/deadzones.png
-   :width: 90%
+   :width: 95%
    :alt: deadzones.png
 
 
