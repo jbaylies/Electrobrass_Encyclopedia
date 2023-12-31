@@ -44,6 +44,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # user starts in dark mode

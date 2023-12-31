@@ -11,7 +11,7 @@ You may use the discounted license if:
 
     You are an educational or non-profit organization.
 
-SousaFX has a 30 day free trial with full functionality (aside from the :ref:`prestige system <Prestige System>`_). All license purchases are final.
+SousaFX has a 30 day free trial with full functionality (aside from the :ref:`prestige system <Prestige System>`). All license purchases are final.
 
 Payment may be sent via any of these platforms. Please be sure to include the email address that you would like the license key sent to.
 
