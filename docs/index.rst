@@ -9,7 +9,6 @@ Electrobrass is brass performance, audio engineering, music education.
    :maxdepth: 2
    :caption: Contents:
 
-   content/how-to-contribute.rst
-   content/tutorials/index.rst
    content/resources/links.rst
-   content/SousaFX-docs/sousafx-docs.rst
+   content/tutorials/index.rst
+   content/SousaFX-docs/index.rst
