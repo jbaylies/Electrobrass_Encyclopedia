@@ -38,6 +38,10 @@ Materials
 
 -  `5V 50W PSU <https://www.aliexpress.com/item/4000221993487.html>`_
 
+.. note::
+
+   After four years of using this PSU I just had an issue where, a few times an hour, my LEDs would all turn off for a minute. Unplugging the PSU from the outlet and plugging it back in fixed it. It had been plugged in for months so maybe just don't leave this PSU plugged in for weeks on end.
+
 -  `Soldering Iron <https://www.testequipmentdepot.com/weller/soldering/soldering-stations/digital-we-soldering-station-120v-70w-we1010.htm>`_ (I bought a cheap soldering iron, hated it, then splurged on the Weller, which is great)
 
 -  `Helping hands <https://www.amazon.com/Neiko-01902-Adjustable-Magnifying-Alligator/dp/B000P42O3C>`_
@@ -47,6 +51,10 @@ Materials
 .. note::
 
    If you haven’t soldered before, Nic Collins’ book `Handmade Electronic Music <https://www.nicolascollins.com/handmade.htm>`_ is a great way to learn. Also, Adafruit has a `soldering guide <https://learn.adafruit.com/make-it-glow-how-to-solder-neopixels-a-beginners-guide>`_ specifically for LEDs.
+
+.. important::
+
+   DON'T BREATH THE FUMES! IT'S LEAD!
 
 -  Electrical tape and Gorilla tape
 
@@ -77,16 +85,9 @@ Max/MSP handles the VFX, and outputs a stream of RGB data to the Teensy, which u
 
 Since Max can only send the numbers 0 - 255 to the Teensy, we clamp 0 - 253 so that 254 and 255 can be used as markers. There's not much of a difference in brightness at that end of the range, anyways.
 
-The current Teensy code can be `downloaded from here <https://github.com/Sousastep/sousastep/blob/main/microcontrollers/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino>`_. This code also sends capacitive touch sense data from the Teensy 3.2 to Max, which can be used to control a noise gate so that it closes whenever you're not touching the mouthpiece. This helps prevent feedback in a live performance with lots of bass and/or reverb. You'll have to make some modifications to the code if you want to use this with a Teensy 4.0
+The current Teensy code can be `downloaded from here <https://github.com/Sousastep/sousastep/blob/main/SousaVFX/microcontrollers/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino>`_. Last time I touched this code I was messing with an accelerometer and a capacitive touch sensor, and couldn't get them to work well, but haven't removed the code yet, so there's some superfluous code in there.
 
-.. figure:: media/touchsensereceive.png
-   :width: 60%
-   :alt: touchsensereceive.png
-
-
-I also tried receiving data from an accelerometer, but using it to control the VFX looked cheesy, and it made the frames stutter.
-
-You can download my `VFX Max project here <https://github.com/jbaylies/sousastep/tree/main/Sousastep%20Visual%20FX>`_ (with the start and end markers). It's set up to work with my rig, so you'll have to modify it a bit, but maybe I could refactor it to work well with git branches...
+You can download my `VFX Max project here <https://github.com/Sousastep/sousastep/tree/main>`_ (with the start and end markers). It's set up to work with my rig, so you'll probably just want to extract the `serial stuff <https://sousastep.github.io/SousaFX-docs/en/master/content/sousavfxscreenshots.html#id4>`_ and build your own rig around that.
 
 
 Initial Setup
