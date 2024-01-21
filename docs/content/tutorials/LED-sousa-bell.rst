@@ -36,7 +36,7 @@ Materials
 
    (200 LEDs needed for this tutorial, but definitely buy extras. Even the pros sometimes have trouble sourcing good ones that won’t burn out quickly) WS2812 LEDs were released to the world 7 years ago, and they’ve been improved upon since then. `Click here <https://hackaday.com/2019/03/26/can-you-live-without-the-ws2812/>`_ to read more about other types of LEDs.
 
--  `5V 50W PSU <https://www.aliexpress.com/item/4000221993487.html>`_
+-  `5V 10A PSU <https://www.aliexpress.us/item/3256805620527403.html>`_
 
 .. note::
 
