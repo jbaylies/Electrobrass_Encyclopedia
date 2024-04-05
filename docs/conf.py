@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Electrobrass Encyclopedia'
-copyright = '2021, Electrobrass'
-author = 'Electrobrass'
+copyright = '2024, Sousastep'
+author = 'Sousastep'
 
 # The short X.Y version
 version = '0.0.2'
@@ -45,7 +45,38 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
     'sphinx.ext.autosectionlabel',
+    'sphinx_new_tab_link',
+    'sphinx_design',
 ]
+
+html_theme_options = {
+    # 'analytics_id': 'G-XC8M12NVX5',#  Provided by Google in your dashboard
+    #  https://github.com/citusdata/citus_docs/issues/623#issue-301567791
+    'analytics_anonymize_ip': False,
+    'logo_only': False,
+    'display_version': False,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': True,
+    'vcs_pageview_mode': '',
+    # 'style_nav_header_background': 'white',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
+
+# https://favicon.io/favicon-converter/
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
+html_logo = 'content/media/icon.png'
+html_favicon = 'content/media/favicon.ico'
+
+# https://stackoverflow.com/questions/74046545/how-to-remove-built-with-sphinx-using-a-theme-provided-by-read-the-docs-from
+html_show_sphinx = False
+
+# https://stackoverflow.com/a/53705453
+html_show_sourcelink = False
 
 # user starts in dark mode
 default_dark_mode = False
@@ -96,6 +127,13 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = ['css/custom.css']
+
+# Override sphinx_rtd_dark_mode's theme_switcher.js to clean up footer
+html_js_files = ['js/theme_switcher.js']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -196,7 +234,7 @@ try:
    html_context
 except NameError:
    html_context = dict()
-html_context['display_lower_left'] = True
+html_context['display_lower_left'] = False
 
 if 'REPO_NAME' in os.environ:
 	REPO_NAME = os.environ['REPO_NAME']
@@ -269,7 +307,7 @@ html_context['downloads'].append( ('epub', '/' +REPO_NAME+ '/' +current_language
 # "EDIT ON GITHUB" LINKS #
 ##########################
 
-html_context['display_github'] = True
+html_context['display_github'] = False
 html_context['github_user'] = 'jbaylies'
 html_context['github_repo'] = 'Electrobrass_Encyclopedia'
 html_context['github_version'] = 'master/docs/'

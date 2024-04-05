@@ -1,6 +1,8 @@
 LED Sousaphone Bell
 ===================
 
+AKA Pixel Mapping with MaxMSP
+
 by John Baylies - `sousastep.quest <https://www.sousastep.quest/>`_
 
 Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/web/academics/centers/ccm/education/sonicarts.php>`_ program and the `Performance And Interactive Media Arts <https://www.brooklyn.cuny.edu/web/academics/schools/mediaarts/interdisciplinary/graduate/pima/about.php>`_ program.

@@ -44,15 +44,51 @@ Networked Jamming
   - Docs https://sonobus.net/sonobus_userguide.html
 
 
-Free Samples
-------------
+videos
+------
 
-- `free 1gb of black octopus samples <https://blackoctopus-sound.com/product/free-1gb-of-black-octopus-samples/>`_
+Brass rigs
+~~~~~~~~~~
+
+- `Ben Neill: Mutantrumpet <https://www.youtube.com/watch?v=gVxtjEn8j3w>`_
+
+- `Sarah Belle Reid: trumpet + modular synth + handmade electronic instruments <https://www.youtube.com/user/sarahbellereid/videos>`_
+
+- `Brian Wolff: A Boy and His Tuba--Episode 3: Gear Geek! (secrets revealed) <https://www.youtube.com/watch?v=oexsUePG2rA&list=PLBA7DC716D1F70083&index=7>`_
+
+- `Tubasco: Rig Rundown <https://www.youtube.com/watch?v=00ncg79wiOU>`_
+
+Misc
+~~~~
+
+- `Benn Jordan: The Absurdity Of Performing Electronic Music Live <https://youtu.be/0WQSCE0Blro>`_
+
+- `Steve Duda: Teaching Yourself to Make Music Software <https://www.youtube.com/watch?v=Cp0rtLaXBio>`_
+
+- `Adam Neely: How In-Ear Monitors are Making Better Musicians <https://www.youtube.com/watch?v=mHoljbkyAEs>`_
+
+- `Making IEM Mixes Better: What is Occlusion? <https://www.youtube.com/watch?v=HxKp5Jn-EaA>`_ 
+
+- `David Gibson: The Art Of Mixing <https://www.youtube.com/watch?v=TEjOdqZFvhY>`_
+
+
+articles
+--------
+
+- `George Lewis creates interactive algorithmic compositions with improvising computers <https://cycling74.com/articles/an-interview-with-george-lewis-and-damon-holzborn-part-1>`_
+
+- `The Tuba-Driven Doom Metal of Dan Peck <https://daily.bandcamp.com/features/the-tuba-driven-doom-metal-of-dan-peck>`_
+
+- `Theon Cross Connects Jazz With Jamaican Sound System Culture <https://daily.bandcamp.com/features/theon-cross-intra-i-interview>`_
+
+- `Unofficial Windows 10 Audio Workstation build and tweak guide <https://aka.ms/Win10AudioTweakGuide>`_
+
 
 Textbooks
 ---------
 
 - `Handmade Electronic Music: The Art of Hardware Hacking <https://www.nicolascollins.com/handmade.htm>`_
+
 
 Audio Effect FAQs
 -----------------
@@ -60,6 +96,7 @@ Audio Effect FAQs
 - `Compressor, preamp FAQ <http://www.ovnilab.com/faq.shtml>`_
 
 - `r/audioengineering FAQ <https://www.reddit.com/r/audioengineering/wiki/faq>`_
+
 
 General Info
 ~~~~~~~~~~~~
@@ -75,36 +112,6 @@ microphones
 - `Aaron Hynds: tuba amplification <https://composerstubaguide.blog/contemporary-techniques/digital-analog/>`_
 
 - `Aaron Hynds: ribbon/condenser mics for tuba <http://forums.chisham.com/viewtopic.php?p=717145#p717145>`_
-
-
-videos
-------
-
-- `Ben Neill: Mutantrumpet <https://www.youtube.com/watch?v=gVxtjEn8j3w>`_
-
-- `Sarah Belle Reid: trumpet + modular synth + handmade electronic instruments <https://www.youtube.com/user/sarahbellereid/videos>`_
-
-- `Brian Wolff: A Boy and His Tuba--Episode 3: Gear Geek! (secrets revealed) <https://www.youtube.com/watch?v=oexsUePG2rA&list=PLBA7DC716D1F70083&index=7>`_
-
-- `Benn Jordan: The Absurdity Of Performing Electronic Music Live <https://youtu.be/0WQSCE0Blro>`_
-
-- `Steve Duda: Teaching Yourself to Make Music Software <https://www.youtube.com/watch?v=Cp0rtLaXBio>`_
-
-- `Adam Neely: How In-Ear Monitors are Making Better Musicians <https://www.youtube.com/watch?v=mHoljbkyAEs>`_
-
-- `David Gibson: The Art Of Mixing <https://www.youtube.com/watch?v=TEjOdqZFvhY>`_
-
-
-articles
---------
-
-- `George Lewis creates interactive algorithmic compositions with improvising computers <https://cycling74.com/articles/an-interview-with-george-lewis-and-damon-holzborn-part-1>`_
-
-- `The Tuba-Driven Doom Metal of Dan Peck <https://daily.bandcamp.com/features/the-tuba-driven-doom-metal-of-dan-peck>`_
-
-- `Theon Cross Connects Jazz With Jamaican Sound System Culture <https://daily.bandcamp.com/features/theon-cross-intra-i-interview>`_
-
-- `Unofficial Windows 10 Audio Workstation build and tweak guide <https://aka.ms/Win10AudioTweakGuide>`_
 
 
 genres

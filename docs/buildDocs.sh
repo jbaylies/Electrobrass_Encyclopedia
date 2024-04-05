@@ -17,19 +17,15 @@ set -x
 ###################
 
 apt-get update
-apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools
+apt-get -y install git rsync python3-sphinx python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools
+ 
+python3 -m pip install --upgrade sphinx-rtd-theme rinohtype pygments sphinx-design sphinx-rtd-dark-mode sphinx-new-tab-link sphinxcontrib-googleanalytics
 
-python3 -m pip install --upgrade rinohtype pygments
-
-# python3 -m pip install --upgrade groundwork-sphinx-theme
-
-python3 -m pip install --upgrade sphinx-rtd-dark-mode
 
 #####################
 # DECLARE VARIABLES #
 #####################
 
-=======
 # prevent git "detected dubious ownership" errors
 git config --global --add safe.directory "*"
  
@@ -65,7 +61,7 @@ for current_version in ${versions}; do
       continue
    fi
 
-   languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
+   languages="en" #`find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
    for current_language in ${languages}; do
 
       # make the current language available to conf.py
@@ -77,17 +73,7 @@ for current_version in ${versions}; do
       echo "INFO: Building for ${current_language}"
 
       # HTML #
-      sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
-
-      # PDF #
-      sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
-      mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/SousaFX-docs_${current_language}_${current_version}.pdf"
-
-      # EPUB #
-      sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
-      mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/SousaFX-docs_${current_language}_${current_version}.epub"
+      sphinx-build -b html docs/ docs/_build/html/ -D language="${current_language}"
 
       # copy the static assets produced by the above build into our docroot
       rsync -av "docs/_build/html/" "${docroot}/"
@@ -118,18 +104,18 @@ git checkout -b gh-pages
 touch .nojekyll
 
 # add redirect from the docroot to our default docs language/version
-cat > index.html <<EOF
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>SousaFX Docs</title>
-      <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/master/'" />
-   </head>
-   <body>
-      <p>Please wait while you're redirected to our <a href="/${REPO_NAME}/en/master/">documentation</a>.</p>
-   </body>
-</html>
-EOF
+# cat > index.html <<EOF
+# <!DOCTYPE html>
+# <html>
+#    <head>
+#       <title>SousaFX Docs</title>
+#       <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/master/'" />
+#    </head>
+#    <body>
+#       <p>Please wait while you're redirected to our <a href="/${REPO_NAME}/en/master/">documentation</a>.</p>
+#    </body>
+# </html>
+# EOF
 
 # Add README
 cat > README.md <<EOF
@@ -144,6 +130,10 @@ For more information on how this documentation is built using Sphinx, Read the D
 
  * https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1
 EOF
+
+# https://stackoverflow.com/questions/67183664/why-is-my-github-pages-custom-domain-constantly-reset
+# https://github.com/jhweintraub/the-crypto-conundrum/blob/063c186865493fbcfb20c22cb0a79303afbe2bde/docs/buildDocs.sh#L74
+echo "edu.sousastep.quest" > CNAME
 
 # copy the resulting html pages built from sphinx above to our new git repo
 git add .
