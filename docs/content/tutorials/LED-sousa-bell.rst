@@ -89,7 +89,7 @@ Since Max can only send the numbers 0 - 255 to the Teensy, we clamp 0 - 253 so t
 
 The current Teensy code can be `downloaded from here <https://github.com/Sousastep/sousastep/blob/main/SousaVFX/microcontrollers/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino>`_. Last time I touched this code I was messing with an accelerometer and a capacitive touch sensor, and couldn't get them to work well, but haven't removed the code yet, so there's some superfluous code in there.
 
-You can download my `VFX Max project here <https://github.com/Sousastep/sousastep/tree/main>`_ (with the start and end markers). It's set up to work with my rig, so you'll probably just want to extract the `serial stuff <https://sousastep.github.io/SousaFX-docs/en/master/content/sousavfxscreenshots.html#id4>`_ and build your own rig around that.
+You can download my `VFX Max project here <https://doc.sousastep.quest/content/install.html>`_ (with the start and end markers). It's set up to work with my rig, so you may want to extract the `serial stuff <https://sousastep.github.io/SousaFX-docs/content/sousavfxscreenshots.html#id4>`_ and build your own rig around that.
 
 
 Initial Setup
