@@ -17,11 +17,12 @@ Communities
 Free Plugins
 ------------
 
+- `whyreaper.com/plugins-resources <https://whyreaper.com/plugins-resources/>`_
+
 - `kilohearts essentials <https://kilohearts.com/products/kilohearts_essentials>`_
 
 - `MFreeFxBundle <https://www.meldaproduction.com/MFreeFxBundle>`_
 
-- `whyreaper.com/plugins-resources <https://whyreaper.com/plugins-resources/>`_
 
 Networked Jamming
 ~~~~~~~~~~~~~~~~~
@@ -42,6 +43,14 @@ Networked Jamming
   - Download https://sonobus.net/
 
   - Docs https://sonobus.net/sonobus_userguide.html
+
+
+Career Guidance
+---------------
+
+- `NRMusicProject: crucial skills for tubists <https://www.reddit.com/r/Tuba/comments/1c1qgzt/comment/kz577v0/>`_
+
+- `dude837: advice for working in music technology <https://www.reddit.com/r/MaxMSP/comments/1c0ogg1/advice_for_working_in_music_technology/>`_
 
 
 videos
@@ -71,6 +80,13 @@ Misc
 
 - `David Gibson: The Art Of Mixing <https://www.youtube.com/watch?v=TEjOdqZFvhY>`_
 
+Tuba Technique
+~~~~~~~~~~~~~~
+
+- `Melvyn Poore: Vocalized tones on the tuba <https://www.youtube.com/watch?v=LUUl570792k>`_
+
+- `Erik Nugent: Didgeridoo Techniques on Low Brass Instruments <https://www.youtube.com/watch?v=RdcRZR2hH6Q>`_
+
 
 articles
 --------
@@ -81,7 +97,6 @@ articles
 
 - `Theon Cross Connects Jazz With Jamaican Sound System Culture <https://daily.bandcamp.com/features/theon-cross-intra-i-interview>`_
 
-- `Unofficial Windows 10 Audio Workstation build and tweak guide <https://aka.ms/Win10AudioTweakGuide>`_
 
 
 Textbooks
