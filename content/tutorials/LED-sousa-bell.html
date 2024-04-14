@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LED Sousaphone Bell &mdash; Electrobrass Encyclopedia 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=7fb76a8e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=e3a6060d"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script src="../../_static/js/theme_switcher.js?v=a0c445e9"></script>
+        <script src="../../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="MIDI Controllers" href="MIDI-controllers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Electrobrass Encyclopedia
+              <img src="../../_static/icon.png" class="logo" alt="Logo"/>
+          </a>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../resources/links.html">Assorted Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="MIDI-controllers.html">MIDI Controllers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">LED Sousaphone Bell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#materials">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-coordinates">Getting the Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arranging-the-leds">Arranging the LEDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Electrobrass Encyclopedia</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">LED Sousaphone Bell</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="led-sousaphone-bell">
+<h1>LED Sousaphone Bell<a class="headerlink" href="#led-sousaphone-bell" title="Link to this heading"></a></h1>
+<p>AKA Pixel Mapping with MaxMSP</p>
+<p>by John Baylies - <a class="reference external" href="https://www.sousastep.quest/" rel="noopener noreferrer" target="_blank">sousastep.quest</a></p>
+<p>Many thanks to the <a class="reference external" href="http://www.brooklyn.cuny.edu/web/academics/centers/ccm/education/sonicarts.php" rel="noopener noreferrer" target="_blank">Brooklyn College Sonic Arts</a> program and the <a class="reference external" href="https://www.brooklyn.cuny.edu/web/academics/schools/mediaarts/interdisciplinary/graduate/pima/about.php" rel="noopener noreferrer" target="_blank">Performance And Interactive Media Arts</a> program.</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/K3kPgxQ373U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check out <a class="reference external" href="https://wjla.com/news/local/gallery/web-exclusive-tuba-man?photo=1" rel="noopener noreferrer" target="_blank">Jay Converse’s LED bell</a> too!</p>
+</div>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>One dedicated sousaphone bell (this is a permanent installation) I used a fiberglass bell spray-painted black. the LEDs will stick to a lacquered bell just as well, but keep in mind that the LEDs will be soldered while they’re on the bell, which would not do the lacquer any favors.</p></li>
+<li><p><a class="reference external" href="https://www.audio-technica.com/cms/wired_mics/8b8850105bdc46d6/index.html" rel="noopener noreferrer" target="_blank">Condenser clip-on mic.</a> My max patch currently only uses amplitude data from the mic. It’s definitely possible to use a much cheaper mic, or even <a class="reference external" href="https://learn.adafruit.com/adafruit-agc-electret-microphone-amplifier-max9814" rel="noopener noreferrer" target="_blank">solder your own.</a></p></li>
+<li><p><a class="reference external" href="https://www.reddit.com/r/audioengineering/wiki/faq#wiki_how_do_i_record_with_my_computer.3F__what.27s_an_interface.3F" rel="noopener noreferrer" target="_blank">Audio interface</a></p></li>
+<li><p><a class="reference external" href="https://cycling74.com/" rel="noopener noreferrer" target="_blank">Max/MSP</a></p></li>
+<li><p><a class="reference external" href="https://www.pjrc.com/store/teensy32.html" rel="noopener noreferrer" target="_blank">Teensy 3.2</a> A Teensy 4 will work as well.</p></li>
+<li><p><a class="reference external" href="https://www.pjrc.com/store/octo28_adaptor.html" rel="noopener noreferrer" target="_blank">OctoWS2811</a></p></li>
+<li><p><a class="reference external" href="https://www.pjrc.com/store/header_14x1.html" rel="noopener noreferrer" target="_blank">Header pins</a></p></li>
+<li><p><a class="reference external" href="https://www.pjrc.com/store/socket_14x1.html" rel="noopener noreferrer" target="_blank">Sockets</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Programmable-Aclorol-Individually-Addressable-Raspberry/dp/B07BKNS7DJ" rel="noopener noreferrer" target="_blank">WS2812b RGB LED</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>(200 LEDs needed for this tutorial, but definitely buy extras. Even the pros sometimes have trouble sourcing good ones that won’t burn out quickly) WS2812 LEDs were released to the world 7 years ago, and they’ve been improved upon since then. <a class="reference external" href="https://hackaday.com/2019/03/26/can-you-live-without-the-ws2812/" rel="noopener noreferrer" target="_blank">Click here</a> to read more about other types of LEDs.</p>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.aliexpress.us/item/3256805620527403.html" rel="noopener noreferrer" target="_blank">5V 10A PSU</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After four years of using this PSU I just had an issue where, a few times an hour, my LEDs would all turn off for a minute. Unplugging the PSU from the outlet and plugging it back in fixed it. It had been plugged in for months so maybe just don’t leave this PSU plugged in for weeks on end.</p>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.testequipmentdepot.com/weller/soldering/soldering-stations/digital-we-soldering-station-120v-70w-we1010.htm" rel="noopener noreferrer" target="_blank">Soldering Iron</a> (I bought a cheap soldering iron, hated it, then splurged on the Weller, which is great)</p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Neiko-01902-Adjustable-Magnifying-Alligator/dp/B000P42O3C" rel="noopener noreferrer" target="_blank">Helping hands</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/WYCTIN-Diameter-Electrical-Soldering-Purpose/dp/B071WQ9X5K" rel="noopener noreferrer" target="_blank">lead solder</a> (leadless solder is a PITA)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you haven’t soldered before, Nic Collins’ book <a class="reference external" href="https://www.nicolascollins.com/handmade.htm" rel="noopener noreferrer" target="_blank">Handmade Electronic Music</a> is a great way to learn. Also, Adafruit has a <a class="reference external" href="https://learn.adafruit.com/make-it-glow-how-to-solder-neopixels-a-beginners-guide" rel="noopener noreferrer" target="_blank">soldering guide</a> specifically for LEDs.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>DON’T BREATH THE FUMES! IT’S LEAD!</p>
+</div>
+<ul class="simple">
+<li><p>Electrical tape and Gorilla tape</p></li>
+<li><p><a class="reference external" href="https://www.digikey.com/short/zb93pw" rel="noopener noreferrer" target="_blank">Micro USB cable</a></p></li>
+<li><p><a class="reference external" href="https://www.digikey.com/short/zb93z3" rel="noopener noreferrer" target="_blank">USB extension cable</a></p></li>
+<li><p><a class="reference external" href="https://www.digikey.com/short/zb934t" rel="noopener noreferrer" target="_blank">Barrel extension cable</a></p></li>
+<li><p><a class="reference external" href="https://www.monoprice.com/product?p_id=4754" rel="noopener noreferrer" target="_blank">XLR cable</a></p></li>
+<li><p><a class="reference external" href="https://www.monoprice.com/product?p_id=9789" rel="noopener noreferrer" target="_blank">CAT6 cable</a></p></li>
+<li><p><a class="reference external" href="https://www.pololu.com/product/2640" rel="noopener noreferrer" target="_blank">Stranded wire 22 AWG</a></p></li>
+<li><p>Projector and tripod (the tripod matters more than the projector.
+It must remain completely stationary for however long it takes you to place all of the LEDs on the bell)</p></li>
+</ul>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Max/MSP handles the VFX, and outputs a stream of RGB data to the Teensy, which uses the venerable OctoWS2811 to send RGB data to the ws2812b LEDs. Max must ensure that the RGB data is sent to the Teensy in the order in which the LEDs are wired to the OctoWS2811. Sometimes this stream of RGB data can become offset. To fix this we add start and end markers to each frame of RGB data .</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/startandendmarkers.png"><img alt="startandendmarkers.png" src="../../_images/startandendmarkers.png" style="width: 90%;" /></a>
+</figure>
+<p>Since Max can only send the numbers 0 - 255 to the Teensy, we clamp 0 - 253 so that 254 and 255 can be used as markers. There’s not much of a difference in brightness at that end of the range, anyways.</p>
+<p>The current Teensy code can be <a class="reference external" href="https://github.com/Sousastep/sousastep/blob/main/SousaVFX/microcontrollers/teensy3_rec-RGB_send-touchRead/teensy3_rec-RGB_send-touchRead.ino" rel="noopener noreferrer" target="_blank">downloaded from here</a>. Last time I touched this code I was messing with an accelerometer and a capacitive touch sensor, and couldn’t get them to work well, but haven’t removed the code yet, so there’s some superfluous code in there.</p>
+<p>You can download my <a class="reference external" href="https://doc.sousastep.quest/content/install.html" rel="noopener noreferrer" target="_blank">VFX Max project here</a> (with the start and end markers). It’s set up to work with my rig, so you may want to extract the <a class="reference external" href="https://sousastep.github.io/SousaFX-docs/content/sousavfxscreenshots.html#id4" rel="noopener noreferrer" target="_blank">serial stuff</a> and build your own rig around that.</p>
+</section>
+<section id="initial-setup">
+<h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this heading"></a></h2>
+<p>Start with the simplest possible setup to ensure that Max can control the LEDs before they’re attached to the bell.</p>
+<p><a class="reference external" href="https://www.pjrc.com/store/octo28_adaptor.html" rel="noopener noreferrer" target="_blank">Click here</a> for instructions on how to connect the OctoWS2811, Teensy 3.2, power supply, and LEDs.</p>
+<p>Download <a class="reference external" href="https://github.com/jbaylies/Electrobrass_Encyclopedia/tree/master/docs/content/tutorials/data" rel="noopener noreferrer" target="_blank">this folder o’ files.</a> (without start and end markers)</p>
+<p>Upload success.ino to the teensy by following <a class="reference external" href="https://www.pjrc.com/teensy/teensyduino.html" rel="noopener noreferrer" target="_blank">these instructions.</a></p>
+<ul class="simple">
+<li><p>Open testpatch1.maxpat</p></li>
+<li><p>Turn the patch’s audio on.</p></li>
+<li><p>Clear the serial ports and locate the teensy.</p></li>
+<li><p>Enable jit.world, and the LEDs should light up…</p></li>
+</ul>
+<p>If only some of the LEDs light up, change this portion of the code:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledsPerStrip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numStrips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-the-coordinates">
+<h2>Getting the Coordinates<a class="headerlink" href="#getting-the-coordinates" title="Link to this heading"></a></h2>
+<p>We can get a list of RGB data from Max by sending pixel coordinates to a matrix. You can arrange the LEDs in any pattern you’d like as long as there’s an ordered list of coordinates, which will have to be reordered after the LED wiring order is determined.</p>
+<p>Here’s how I got the coordinates for <code class="docutils literal notranslate"><span class="pre">remappedLEDcoordinates.txt</span></code></p>
+<p>I found <a class="reference external" href="http://iwant2study.org/lookangejss/math/Series_Numbers/ejss_model_FibonacciSpiral/" rel="noopener noreferrer" target="_blank">this website,</a> clicked “table”, selected the first 200 coordinates, copy-pasted them into google sheets, exported the sheet as a csv file, and used <a class="reference external" href="https://cycling74.com/forums/importing-from-excel-csv-questions" rel="noopener noreferrer" target="_blank">Justin G’s max patch</a> to convert the csv file into Max’s coll object.</p>
+<p>then,</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/max-scale-coords.png"><img alt="max-scale-coords.png" src="../../_images/max-scale-coords.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">This patch will get the Fib. Spiral showing up properly in jit.world</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/flipped-on-xaxis.png"><img alt="flipped-on-xaxis.png" src="../../_images/flipped-on-xaxis.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">Left, incorrect, flipped on x-axis. Right, correct. (challenge: turn the coordinates 90 degrees. It’d look more symmetrical.)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="arranging-the-leds">
+<h2>Arranging the LEDs<a class="headerlink" href="#arranging-the-leds" title="Link to this heading"></a></h2>
+<p>Project a screenshot of the spiral in jit.world onto the bell. Place the LEDs onto the projected dots while being mindful of the wiring order. You’ll want to wire the 200 LEDs in eight groups of 25. You should use your own discretion to do this as efficiently as possible.</p>
+<p>One problem I faced is that I placed half the LEDs, then took a break for a few days, and when I tried to set up the projector again I learned that realigning the projector perfectly is impossible. This led to one speck of light hitting the flare of the bell the first time, and the throat of the bell the second time, which made me place one extra LED, which led to much confusion later on.</p>
+<p>Once completed, the bell will look best from the projector’s point of view.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/numbered-indices.jpeg"><img alt="numbered-indices.jpeg" src="../../_images/numbered-indices.jpeg" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">I used this diagram to reorder the coordinates from the Fibonacci spiral order to my wiring order. You can use it as a guideline, but be warned that it’s flipped on its X axis, and I had to account for one extra LED. Fibonacci index #29 corresponds to wiring index #35 and #170.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The top numbers are the Fibonacci indices, from <a class="reference external" href="http://iwant2study.org/lookangejss/math/Series_Numbers/ejss_model_FibonacciSpiral/" rel="noopener noreferrer" target="_blank">iwant2study.org</a>. The bottom numbers are the wiring indices, which can be determined by turning on the first LED in each of the eight strips.</p>
+<p>Typing those indices into a coll object allows the coordinates to be reordered using the patch below.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../../_images/coll-reorder.png"><img alt="coll-reorder.png" src="../../_images/coll-reorder.png" style="width: 210.6px; height: 362.7px;" /></a>
+<figcaption>
+<p><span class="caption-text">This essentially makes the whole thing a big, low-resolution TV screen.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MIDI-controllers.html" class="btn btn-neutral float-left" title="MIDI Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sousastep.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+ <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
