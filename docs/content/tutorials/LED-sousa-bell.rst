@@ -1,17 +1,81 @@
 LED Sousaphone Bell
 ===================
 
-AKA Pixel Mapping with MaxMSP
-
-by John Baylies - `sousastep.quest <https://www.sousastep.quest/>`_
-
-Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/web/academics/centers/ccm/education/sonicarts.php>`_ program and the `Performance And Interactive Media Arts <https://www.brooklyn.cuny.edu/web/academics/schools/mediaarts/interdisciplinary/graduate/pima/about.php>`_ program.
-
 .. raw:: html
 
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/K3kPgxQ373U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-.. note:: Check out `Jay Converse’s LED bell <https://wjla.com/news/local/gallery/web-exclusive-tuba-man?photo=1>`_ too!
+.. note:: Check out `Jay Converse’s <https://wjla.com/news/local/gallery/web-exclusive-tuba-man?photo=1>`_ and `Jon Swope's <https://www.instagram.com/p/CZ2E-nluLG7/>`_ LED bells too!
+
+
+\/\/---Under Construction---\/\/
+
+Planning the Pattern
+--------------------
+
+Any pattern of LEDs can work as long as their X,Y coordinates are known. 
+
+Whole strips of LEDs can be placed as "lines", or individual LEDs can be cut as pixels.
+
+Software such as MaxMSP can create a pattern of white dots on a black background, and output a list of their coordinates. This image can be projected onto a sousaphone bell to illuminate the positions of the LEDs, but be careful not to mirror the image.
+
+The OctoWS2811 adapter for the Teensy microcontroller supports eight strings of LEDs. Thus, you can place eight strips, or, if you placed individual LEDs, you must stare at the illuminated LED sousaphone bell with great intensity and discover the best way to connect the dots with eight separate paths that all start at the edge of the bell.
+
+If you placed individual LEDs, then stick each LED to the bell in the eight separate paths that you've discovered.
+
+The LEDs are uni-directional, so be sure not to place them backwards.
+
+For instructions on how to connect the OctoWS2811, Teensy, power supply, and LEDs, `Click here <https://www.pjrc.com/store/octo28_adaptor.html>`_.
+
+
+Mapping the LEDs
+----------------
+
+ws2812b LEDs are what's known as "individually addressable", meaning they can be sent a list of unindexed RGB data and they will automatically sequentially assign each piece of RGB data to each LED in the string.
+
+The OctoWS2811 adapter automatically separates an incoming list of RGB data for each string according to the ledsPerStrip and numStrips variables in the Teensy's code.
+
+To efficiently calculate this list of RGB data every frame, each LED has data in four separate arrays for their X values, Y values, distances from the center, and angles from the center. This data must be laid out in the same order that the LEDs are wired, which may take some wrangling to accomplish.
+
+Jason Coon's `LED Mapper website <https://jasoncoon.github.io/led-mapper-react/>`_ can assist in calculating the distance and angle from center, given the coordinates. Or you can calculate it yourself with `trigonometry <https://stackoverflow.com/a/27670986>`_. 
+
+Color pallettes are stored as arrays of RGB data, which can be interpolated and cycled through over time. The methods of cycling through pallettes based on the LED data are known as a patterns, which look like this:
+
+.. code-block:: cpp
+
+   void clockwisePalette()
+   {
+     for (uint16_t i = 0; i < NUM_LEDS; i++)
+     {
+       leds[i] = ColorFromPalette(currentPalette, params.gradientOffset + angles[i]);
+     }
+   }
+   
+      void outwardPalette()
+   {
+     for (uint16_t i = 0; i < NUM_LEDS; i++)
+     {
+       leds[i] = ColorFromPalette(currentPalette, params.gradientOffset - radii[i]);
+     }
+   }
+   
+   void northEastPalette()
+   {
+     for (uint16_t i = 0; i < NUM_LEDS; i++)
+     {
+       leds[i] = ColorFromPalette(currentPalette, params.gradientOffset - (coordsX[i] + coordsY[i]));
+     }
+   }
+
+Every frame, the chosen pattern will loop through every LED and calculate its RGB value based on the chosen palette and the given LED coordinate, radius, and/or angle data.
+
+/\/\---Under Construction---/\/\
+
+
+Old Tutorial (superseded)
+=========================
+
+by John Baylies - `sousastep.quest <https://www.sousastep.quest/>`_
 
 Materials
 ---------
@@ -167,3 +231,10 @@ Typing those indices into a coll object allows the coordinates to be reordered u
    :alt: coll-reorder.png
 
    This essentially makes the whole thing a big, low-resolution TV screen.
+
+
+Thanks
+------
+
+Many thanks to the `Brooklyn College Sonic Arts <http://www.brooklyn.cuny.edu/web/academics/centers/ccm/education/sonicarts.php>`_ program and the `Performance And Interactive Media Arts <https://www.brooklyn.cuny.edu/web/academics/schools/mediaarts/interdisciplinary/graduate/pima/about.php>`_ program.
+
